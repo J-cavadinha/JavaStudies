@@ -1,4 +1,4 @@
-public class TiposDado {
+public class TiposDados {
     public static void main(String[] args) {
         char caracter = '1';
         String frase = "Segura que o pai agora está de Java";
