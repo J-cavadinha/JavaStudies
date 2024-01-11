@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class entradausuario {
+public class EntradaBasica {
     public static void main(String[] args) {
         // Realiza como se fosse uma declaração de função para simplificar o uso, estilo
         // typedef
