@@ -3,7 +3,7 @@ import java.util.Locale;
 import java.awt.Toolkit;
 import java.awt.Dimension;
 
-public class dadossistema {
+public class DadosSistema {
     public static void main(String[] args) {
         Date data = new Date();
         System.out.println("Data: " + data);
