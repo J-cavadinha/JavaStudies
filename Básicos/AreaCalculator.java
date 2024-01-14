@@ -47,7 +47,7 @@ public class AreaCalculator {
     }
 
     static void square(Scanner user_input) {
-        System.out.print("Type in the size of the square side");
+        System.out.print("Type in the size of the square side: ");
         float square_side = user_input.nextFloat();
         System.out.println("The square area is " + (square_side * square_side));
     }
@@ -65,7 +65,7 @@ public class AreaCalculator {
     static void triangle(Scanner user_input) {
         System.out.print("Type in the size of the triangle base: ");
         float triangle_base = user_input.nextFloat();
-        System.out.print("Type in the size of the triangle height");
+        System.out.print("Type in the size of the triangle height: ");
         float triangle_height = user_input.nextFloat();
 
         float triangle_area = (triangle_base * triangle_height) / 2;
