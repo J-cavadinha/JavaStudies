@@ -1,2 +1,2 @@
-* Repositório contendo meus estudos da linguagem Java, contendo meus programas divididos por suas complexidades.
-* Criado afim de rastrear meu desenvolvimento na linguagem.
+* Repository with my Java studies, containing my programs/algorithms sorted by code complexity.
+* Created in order to track my Java learning.
