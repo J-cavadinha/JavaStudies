@@ -9,32 +9,36 @@ import java.util.Scanner;
 public class AreaCalculator {
     public static void main(String[] args) {
         Scanner user_input = new Scanner(System.in);
+        char area_option;
 
-        char area_option = menu(user_input);
+        do {
+            area_option = menu(user_input);
 
-        switch (area_option) {
-            case '1':
-                square(user_input);
-                break;
+            switch (area_option) {
+                case '1':
+                    square(user_input);
+                    break;
 
-            case '2':
-                rectangle(user_input);
-                break;
+                case '2':
+                    rectangle(user_input);
+                    break;
 
-            case '3':
-                triangle(user_input);
-                break;
+                case '3':
+                    triangle(user_input);
+                    break;
 
-            case '4':
-                trapeze(user_input);
-                break;
+                case '4':
+                    trapeze(user_input);
+                    break;
 
-            case '5':
-                return;
+                case '5':
+                    return;
 
-            default:
-                System.out.println("Invalid input.");
-        }
+                default:
+                    System.out.println("Invalid input.");
+            }
+            System.out.println("---------------------------------------------");
+        } while (area_option != '5');
         user_input.close();
     }
 
