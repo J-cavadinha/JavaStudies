@@ -18,20 +18,20 @@ public class Median {
         System.out.print("How many grades would you like to consider? ");
         int amountof_grades = user_input.nextInt();
 
-        System.out.print("Type (1) to calculate a median or (2) to calculate a weighted median: ");
+        System.out.print("Type (1) to calculate a median or (2) to calculate a weighted average: ");
         char median_type = user_input.next().charAt(0);
 
         if (median_type == '1') {
             median = arithmetic_median(user_input, amountof_grades);
         } else if (median_type == '2') {
-            median = weighted_median(user_input, amountof_grades);
+            median = weighted_average(user_input, amountof_grades);
         } else {
             System.out.println("Invalid input.");
         }
 
         System.out.println("-----------------------------------");
         if (median >= 7.0) {
-            System.out.println("Congratulations!!! " + student_name + " you have been aproved!");
+            System.out.println("Congratulations!!! " + student_name + " you have been approved!");
         } else if (median >= 6.0 && median < 7.0) {
             System.out.println("You made it to the finals, " + student_name + ", good luck!");
         } else {
@@ -63,7 +63,7 @@ public class Median {
         return (grades_sum) / (amountof_grades);
     }
 
-    static float weighted_median(Scanner user_input, int amountof_grades) {
+    static float weighted_average(Scanner user_input, int amountof_grades) {
 
         int counter = 0;
         float[] grades = new float[amountof_grades]; // Start a new array object declaring its size (amountof_grades)
