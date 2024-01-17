@@ -14,13 +14,17 @@ public class Median {
         System.out.print("Type in your name: ");
         String student_name = user_input.nextLine();
 
+        // Waiting to learn vectors in order to implement this.
+        System.out.print("How many grades would you like to consider? ");
+        int amountof_grades = user_input.nextInt();
+
         System.out.print("Type (1) to calculate a median or (2) to calculate a weighted median: ");
         char median_type = user_input.next().charAt(0);
 
         if (median_type == '1') {
-            median = arithmetic_median(user_input);
+            median = arithmetic_median(user_input, amountof_grades);
         } else if (median_type == '2') {
-            median = weighted_median(user_input);
+            median = weighted_median(user_input, amountof_grades);
         } else {
             System.out.println("Invalid input.");
         }
@@ -34,49 +38,58 @@ public class Median {
             System.out.println("You have failed, good luck next time!");
         }
 
-        System.out.println("Your anual median is " + median);
+        System.out.printf("Your median is %.2f\n", median);
         user_input.close();
     }
 
-    static float arithmetic_median(Scanner user_input) {
+    static float arithmetic_median(Scanner user_input, int amountof_grades) {
 
-        System.out.print("Type in your 1st grade: ");
-        float grade1 = user_input.nextFloat();
+        int counter = 0;
+        float[] grades = new float[amountof_grades];
+        float grades_sum = 0;
 
-        System.out.print("Type in your 2nd grade: ");
-        float grade2 = user_input.nextFloat();
+        do {
+            System.out.printf("Type in your %d grade: ", (counter + 1));
+            grades[counter] = user_input.nextFloat();
+            counter++;
+        } while (amountof_grades > counter);
 
-        System.out.print("Type in your 3rd grade: ");
-        float grade3 = user_input.nextFloat();
-        System.out.print("\n");
+        for (int i = 0; i < amountof_grades; i++) {
+            grades_sum = grades_sum + grades[i];
+            System.out.printf("%.2f\t", grades[i]);
+        }
+        System.out.println();
 
-        return (grade1 + grade2 + grade3) / 3;
+        return (grades_sum) / (amountof_grades);
     }
 
-    static float weighted_median(Scanner user_input) { // Cada nota * peso, todas as notas / qtd notas
+    static float weighted_median(Scanner user_input, int amountof_grades) {
 
-        System.out.print("Type in your 1st grade: ");
-        float grade1 = user_input.nextFloat();
-        System.out.print("Type in the weight of your 1st grade: ");
-        float weight1 = user_input.nextFloat();
-        grade1 = grade1 * weight1;
+        int counter = 0;
+        float[] grades = new float[amountof_grades]; // Start a new array object declaring its size (amountof_grades)
+        float grades_sum = 0;
 
-        System.out.print("Type in your 2nd grade: ");
-        float grade2 = user_input.nextFloat();
-        System.out.print("Type in the weight of your 2nd grade: ");
-        float weight2 = user_input.nextFloat();
-        grade2 = grade2 * weight2;
+        do {
+            System.out.printf("Type in your %d grade: ", (counter + 1));
+            float aux_grade = user_input.nextFloat();
 
-        System.out.print("Type in your 3rd grade: ");
-        float grade3 = user_input.nextFloat();
-        System.out.print("Type in the weight of your 3rd grade: ");
-        float weight3 = user_input.nextFloat();
-        grade3 = grade3 * weight3;
+            System.out.printf("Type in the weight of your %d grade: ", (counter + 1));
+            float weight = user_input.nextFloat();
+
+            grades[counter] = aux_grade * weight;
+            grades_sum += grades[counter];
+            counter++;
+
+        } while (amountof_grades > counter);
 
         System.out.println();
 
-        float median = (grade1 + grade2 + grade3) / 3;
-        return median;
+        for (int i = 0; i < amountof_grades; i++) {
+            grades_sum = grades_sum + grades[i];
+            System.out.printf("%.2f\t", grades[i]);
+        }
+        System.out.println();
 
+        return (grades_sum / amountof_grades);
     }
 }
