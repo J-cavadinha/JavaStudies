@@ -13,6 +13,8 @@ public class GradeCounter {
     }
 
     public static void gradecount(Scanner scan) {
+
+        arithmetic_median(scan, 3);
         int[] grades = new int[11];
         int newgrade = 0;
 

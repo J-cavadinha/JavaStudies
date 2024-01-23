@@ -42,7 +42,7 @@ public class Median {
         user_input.close();
     }
 
-    static float arithmetic_median(Scanner user_input, int amountof_grades) {
+    public static float arithmetic_median(Scanner user_input, int amountof_grades) {
 
         int counter = 0;
         float[] grades = new float[amountof_grades];
