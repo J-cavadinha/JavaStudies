@@ -9,12 +9,15 @@ public class GradeCounter {
 
         Scanner scan = new Scanner(System.in);
 
+        String nome = "João";
+        boolean x = nome.isEmpty();
+        System.out.println(x);
+
         gradecount(scan);
     }
 
     public static void gradecount(Scanner scan) {
 
-        arithmetic_median(scan, 3);
         int[] grades = new int[11];
         int newgrade = 0;
 
