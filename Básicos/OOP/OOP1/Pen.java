@@ -1,11 +1,12 @@
-package OOP;
+package OOP.OOP1;
 
 public class Pen {
-    String model;
-    String color;
-    float tip;
-    float ink;
-    boolean cap;
+    public String model;
+    public String color;
+    public float tip;
+    public float ink;
+    public boolean cap;
+    private String owner;
 
     void status() {
         System.out.println("Model: " + this.model);
@@ -13,6 +14,7 @@ public class Pen {
         System.out.println("Tip: " + this.tip + "mm");
         System.out.println("Ink: " + this.ink + "%");
         System.out.println("Is the cap on? " + this.cap);
+        System.out.println("Owner: " + this.owner);
     }
 
     void write() {

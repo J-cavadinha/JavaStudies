@@ -1,4 +1,4 @@
-package OOP;
+package OOP.OOP1;
 
 import java.util.Scanner;
 
@@ -10,6 +10,8 @@ public class principal {
         pen1.model = "bic";
         pen1.tip = 0.5f;
         pen1.cap = true;
+        // pen1.owner = "João";
+        // The code above is not going to run since 'owner' is private
 
         pen1.status();
 
