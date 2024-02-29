@@ -6,8 +6,10 @@ public class BackAccMain {
     public static void main(String[] args) {
 
         Scanner user_input = new Scanner(System.in);
+        BankAcc bankAcc = new BankAcc(0, null, null);
+        int result = bankAcc.user_option(user_input);
 
-        while (user_option(user_input) != 0) {
+        while (result != 0) {
 
             System.out.print("Type in your bank account number: ");
             int accNumber = user_input.nextInt();
@@ -22,6 +24,8 @@ public class BackAccMain {
 
             BankAcc account1 = new BankAcc(accNumber, accType, owner);
             account1.status();
+
+            result = bankAcc.user_option(user_input);
         }
 
         user_input.close();

@@ -20,7 +20,7 @@ public class BankAcc {
 
     public int user_option(Scanner user_input) {
         System.out.print(
-                "Bank Menu\n0 - End\t1 - New account\t2 - Deposit\t3 - Withdraw\t4 - Pay tax\t5 - Close account  ");
+                "Bank Menu\n0 - End  1 - New account  2 - Deposit  3 - Withdraw  4 - Pay tax  5 - Close account: ");
         int option = user_input.nextInt();
 
         switch (option) {
@@ -79,10 +79,24 @@ public class BankAcc {
     }
 
     public void withdraw(int accNumber, String accType, String owner, Scanner user_input) {
-
+        System.out.println("How much would you like to withdraw? ");
+        float value = user_input.nextFloat();
+        this.balance -= value;
     }
 
     public void monthlypay(int accNumber, String accType, String owner) {
+        if (accType == "savings") {
+            this.balance -= 20.0;
+            System.out.println("You have sucessfully paid your monthly tax.");
+            System.out.println(this.balance);
+        } else if (accType == "checkings") {
+            this.balance -= 12.0;
+            System.out.println("You have sucessfully paid your monthly tax.");
+            System.out.println(this.balance);
+        }
+        // No else cuz bank acc is "limited" for now, soon to have an error handling
+        // when
+        // getting the type so i don't think an else will be needed here
     }
 
     public int getAccNumber() {
