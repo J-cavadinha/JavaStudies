@@ -1,5 +1,7 @@
 package OOP.BankExercise;
 
+import java.util.Scanner;
+
 public class BankAcc {
     public int accNumber;
     protected String accType;
@@ -8,12 +10,52 @@ public class BankAcc {
     private boolean status;
 
     public BankAcc(int accNumber, String accType, String owner) {
-        this.setAccNumber(accNumber);
-        this.setAccType(accType);
-        this.setOwner(owner);
-        this.balance = 0;
         this.status = true;
+        this.setAccType(accType);
+        this.setAccNumber(accNumber);
+        this.setOwner(owner);
+        // if para implementar o 'íncentivo'
+        this.balance = 0;
     }
+
+    public int user_option(Scanner user_input) {
+        System.out.print(
+                "Bank Menu\n0 - End\t1 - New account\t2 - Deposit\t3 - Withdraw\t4 - Pay tax\t5 - Close account  ");
+        int option = user_input.nextInt();
+
+        switch (option) {
+            case 0:
+                option = 0;
+                return option;
+            case 1:
+                break;
+
+            case 2:
+                deposit(this.accNumber, this.accType, this.owner, user_input);
+                break;
+
+            case 3:
+                withdraw(this.accNumber, this.accType, this.owner, user_input);
+                break;
+
+            case 4:
+                monthlypay(this.accNumber, this.accType, this.owner);
+                break;
+
+            case 5:
+                close_acc();
+                break;
+
+            default:
+                System.out.println("Input error, try again.");
+        }
+        return -1;
+    }
+    // Se for corrente começa com 50 e poupança com 150
+
+    // Não é possível fechar conta com dinheiro e nem devendo
+    // Operações com a conta necessitam uma verificação se está aberta primeiro
+    // Corrente paga 12 p mes e poupança 20
 
     void status() {
         System.out.println("///////////////////////////////////////////////");
@@ -25,22 +67,23 @@ public class BankAcc {
         System.out.println("///////////////////////////////////////////////");
     }
 
-    // public void close_acc(){}
+    public void close_acc() {
+    }
 
-    /*
-     * public void deposit(int accNumber, String accType, String owner){
-     * Scanner user_input = new Scanner(System.in);
-     * 
-     * System.out.print("How much would you like to deposit? ");
-     * float value = user_input.nextFloat();
-     * 
-     * this.balance += value;
-     * }
-     */
+    public void deposit(int accNumber, String accType, String owner, Scanner user_input) {
 
-    // public void withdraw(int accNumber, String accType, String owner){}
+        System.out.print("How much would you like to deposit? ");
+        float value = user_input.nextFloat();
 
-    // public void monthlypay(int accNumber, String accType, String owner){}
+        this.balance += value;
+    }
+
+    public void withdraw(int accNumber, String accType, String owner, Scanner user_input) {
+
+    }
+
+    public void monthlypay(int accNumber, String accType, String owner) {
+    }
 
     public int getAccNumber() {
         return this.accNumber;
