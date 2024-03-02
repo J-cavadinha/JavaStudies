@@ -1,3 +1,4 @@
+package BasicJava;
 
 /* Program created to test how input works in java language.
  * Really basic commands really just to see how it is manipulated.

@@ -1,6 +1,4 @@
-package OOP.OOP1;
-
-public class Pen {
+public class Pen_1 {
     public String model;
     public String color;
     public float tip;

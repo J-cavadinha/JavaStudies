@@ -1,6 +1,7 @@
+package BasicJava;
+
 /* Program that reads x student's grades (10) and then displays the amount of grades of every grade from 0 to 10.
 */
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

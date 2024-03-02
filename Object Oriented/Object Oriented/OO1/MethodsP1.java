@@ -1,10 +1,8 @@
-package OOP.OOP1;
-
 import java.util.Scanner;
 
-public class principal {
+public class MethodsP1 {
     public static void main(String[] args) {
-        Pen pen1 = new Pen();
+        Pen_1 pen1 = new Pen_1();
         pen1.ink = 100.00f;
         pen1.color = "azul";
         pen1.model = "bic";

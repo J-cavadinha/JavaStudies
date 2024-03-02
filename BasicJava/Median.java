@@ -1,3 +1,4 @@
+package BasicJava;
 /* Program created to calculate a student's median.
  * It is missing features like a loop controlled by user input to put in the amount of grades
  * wanted and some other details but it is a start on my java studies.

@@ -1,3 +1,4 @@
+package BasicJava;
 /* Program created to calculate the area of diferent kinds of formats.
  * Made in 1/13/2024 as a way to begin my studies in Java language.
  */

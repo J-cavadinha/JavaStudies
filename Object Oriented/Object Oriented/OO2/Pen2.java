@@ -1,12 +1,12 @@
-package OOP.OOP2;
+// Class Pen using getters/setters
 
-public class Pen {
+public class Pen2 {
     public String model;
     private String color;
     private float tip;
     private boolean cap;
 
-    public Pen(String model, String color, float tip) {
+    public Pen2(String model, String color, float tip) {
         this.setModel(model);
         this.setColor(color);
         this.setTip(tip);

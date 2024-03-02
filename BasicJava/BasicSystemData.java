@@ -1,3 +1,4 @@
+package BasicJava;
 /* Program made as a way to see how "import" command works.
  * Nothing really to comment, as basic as it looks.
  * Made in 1/4/2024 and translated (mainly variables and outputs) in 1/13/2024.

@@ -1,3 +1,4 @@
+package BasicJava;
 /* Program made as a java data types introduction, my first java code.
  * Made in 1/3/2024 and translated to English (mainly variables and outputs) in 1/13/2024.
  */
