@@ -1,33 +1,25 @@
-package OOP.BankExercise;
-
-import java.util.Scanner;
-
 public class BackAccMain {
     public static void main(String[] args) {
 
-        Scanner user_input = new Scanner(System.in);
-        BankAcc bankAcc = new BankAcc(0, null, null);
-        int result = bankAcc.user_option(user_input);
+        BankAcc ac1 = new BankAcc();
+        ac1.setAccNumber(1);
+        ac1.setOwner("João Cavadinha");
+        ac1.openAcc("checkings");
 
-        while (result != 0) {
+        BankAcc ac2 = new BankAcc();
+        ac2.setAccNumber(2);
+        ac2.setOwner("Anna Julia");
+        ac2.openAcc("savings");
 
-            System.out.print("Type in your bank account number: ");
-            int accNumber = user_input.nextInt();
+        ac1.deposit(100);
+        ac2.deposit(500);
 
-            user_input.nextLine();
+        ac2.withdraw(100);
 
-            System.out.print("Type in your account type (savings/checkings): ");
-            String accType = user_input.nextLine();
+        ac1.withdraw(150);
+        ac1.closeAcc();
 
-            System.out.print("Type in your name: ");
-            String owner = user_input.nextLine();
-
-            BankAcc account1 = new BankAcc(accNumber, accType, owner);
-            account1.status();
-
-            result = bankAcc.user_option(user_input);
-        }
-
-        user_input.close();
+        ac1.accountDetails();
+        ac2.accountDetails();
     }
 }
